@@ -22,11 +22,11 @@ void p_char(va_list arg)
 void p_str(va_list arg)
 {
 	char *c;
-	int a;
+	int i;
 
 	c = va_arg(arg, char *);
-	for (a = 0; c[a] != '\0'; a++)
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		_putchar(c[a]);
+		_putchar(c[i]);
 	}
-}	          
+}

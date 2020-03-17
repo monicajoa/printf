@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _printf -  produces output according to a format
+ * _printf - Produces output according to a format
  * @format: String to print including the format 
  *
  * Return: number of characters printed
@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			f = _get_format(format[i + 1]);
+			f = _get_format(format + (i + 1));
 			f(p_l);
 		}
 		else
