@@ -7,10 +7,7 @@
  */
 void p_char(va_list arg)
 {
-	char *c;
-
-	c = va_arg(arg, char *);
-	_putchar(c[0]);
+	_putchar(va_arg(arg, int));
 }
 
 /**
