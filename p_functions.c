@@ -5,9 +5,10 @@
  *
  * Return: Always 0 (Success)
  */
-void p_char(va_list arg)
+int p_char(va_list arg)
 {
 	_putchar(va_arg(arg, int));
+	return (1);
 }
 
 /**
@@ -16,7 +17,7 @@ void p_char(va_list arg)
  *
  * Return: Always 0 (Success)
  */
-void p_str(va_list arg)
+int p_str(va_list arg)
 {
 	char *str;
 	int i;
@@ -24,11 +25,11 @@ void p_str(va_list arg)
 	str = va_arg(arg, char *);
 	if (str == '\0')
 	{
-		_putchar('n');
-		return;
+		return (0);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
 	}
+	return (i);
 }

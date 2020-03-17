@@ -13,8 +13,8 @@ int _printf(const char *format, ...)
 		{'\0', '\0'}
 	};
 	va_list p_l;
-	int i, j;
-	char *p;
+	int i, j, n = 0, sc = 0;
+	int m = 0;
 
 	va_start(p_l, format);
 	i = 0;
@@ -27,8 +27,10 @@ int _printf(const char *format, ...)
 			{
 				if (ar_fm[j].ft[0] == format[i + 1])
 				{
-					ar_fm[j].func(p_l);
+					n = ar_fm[j].func(p_l);
+					m = m + n;
 					i++;
+					sc++;
 				}
 				j++;
 			}
@@ -39,5 +41,5 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	return (i);
+	return ((i + m) - (2 * sc));
 }
