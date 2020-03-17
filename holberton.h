@@ -11,12 +11,12 @@
 typedef struct format_func
 {
 	char *ft;
-	void (*func)();
+	int (*func)();
 } format_func;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void p_char(va_list);
-void p_str(va_list);
+int p_char(va_list);
+int p_str(va_list);
 
 #endif /* HOLBERTON_H */
