@@ -9,13 +9,16 @@ int _printf(const char *format, ...)
 {
 	va_list p_l;
 	int i;
+	char *p;
+	void (*f)();
 
 	va_start(p_l, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			_get_format(format[i + 1], p_l);
+			f = _get_format(format[i + 1]);
+			f(p_l);
 		}
 		else
 		{
