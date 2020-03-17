@@ -5,25 +5,39 @@
  *
  * Return: number of characters printed
  */
-int _printf(const char *format, ...)
+int _printf(char *format, ...)
 {
+	format_func ar_fm[] = {
+		{"c", p_char},
+		{"s", p_str},
+		{'\0', '\0'}
+	};
 	va_list p_l;
-	int i;
+	int i, j;
 	char *p;
-	void (*f)();
 
 	va_start(p_l, format);
-	for (i = 0; format[i] != '\0'; i++)
+	i = 0;
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			f = _get_format(format + (i + 1));
-			f(p_l);
+			j = 0;
+			while (ar_fm[j].ft != '\0')
+			{
+				if (ar_fm[j].ft[0] == format[i + 1])
+				{
+					ar_fm[j].func(p_l);
+					i++;
+				}
+				j++;
+			}
 		}
 		else
 		{
 			_putchar(format[i]);
 		}
+		i++;
 	}
 	return (i);
 }

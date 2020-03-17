@@ -15,8 +15,8 @@ typedef struct format_func
 } format_func;
 
 int _putchar(char c);
-int _printf(const char *format, ...);
-void (*_get_format(char fmt))(va_list ls_pa);
+int _printf(char *format, ...);
+void (*_get_format(char *fmt))(va_list ls_pa);
 void p_char(va_list);
 void p_str(va_list);
 
