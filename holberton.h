@@ -2,6 +2,7 @@
 #define HOLBERTON_H
 
 #include <stdarg.h>
+
 /**
  * struct format_func - Struct with format with its respective function
  *
@@ -19,6 +20,6 @@ int _printf(const char *format, ...);
 int p_char(va_list);
 int p_str(va_list);
 int p_int(va_list);
-int p_percent(va_list arg);
+int p_percent(va_list);
 
 #endif /* HOLBERTON_H */
