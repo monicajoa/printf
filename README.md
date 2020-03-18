@@ -45,7 +45,7 @@ _printf("%d\n", num1);
 ```
 ## Output
 ```bash
-i345
+345
 12
 ```
 
