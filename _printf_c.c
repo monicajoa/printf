@@ -43,5 +43,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+	va_end(p_l);
 	return ((i + m) - (2 * sc));
 }
