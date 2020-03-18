@@ -1,0 +1,74 @@
+.TH man _printf "18 March 2020" "1.0" "_printf function man page"
+.SH NAME
+.B _printf - Print data characters with formated type of variables
+.SH SYNOPSIS
+_printf
+.B #include "holberton.h"
+.I FORMAT(String) [ARGUMENT]...
+.SH DESCRIPTION
+printf receives a variable number of parameters. The first parameter is fixed and is the format string. It includes text to be printed literally
+and marks to be replaced by text that is obtained from the additional parameters. Therefore printf is called with as many parameters as there are
+marks in the format string plus one (the format string itself).
+.SH RETURN VALUE
+Returns an integer with the number of characters printed without the null byte at the end of the string.
+
+If the functions fails at any task, its return value is
+.BI -1.
+.SH Format String
+Is a string of characters that starts and ends with a double quotes, it is composed by 0 or more directives, the ordinary characters different to % are send to the standard output and the conversion specifiers are links to the paramethers next to the format string, each one are printed in the order that they are typed 
+on the arguments, so the identifier has to be related with the type of the variable on the argument. 
+.SH Conversion Specifier
+Each conversion specification is introduced by the character %, and ends with a conversion specifier.
+
+.I The posible specifiers are:
+.TP
+.BR c
+- Print the correspoonding ASCII character, the argument is converted to an unsigned char, an the resulting is send to the standart output.
+.TP
+.BR s
+- Print the characters string, the argument to be expected is a pointer to an array of characters type(string), the characters from the array are send to the standard output till the terminating null byte but not including one the characters printed.
+.TP
+.BR d, i
+- Print the number asociated to the argument, it is converted to signed decimal notation.
+.TP
+.BR % 
+- If % is send as a specifier it is going to print the % character.
+.SH Examples
+.I Example #1
+
+.B #include "holberton.h"
+
+_printf("Holberton%s,%s%d,%d\n", school,month,day,year);
+
+.I Output:
+
+Holbertonschool, March 18, 2020
+
+.I Example #2
+
+.B #include "holberton.h"
+
+int num1 = 12;
+
+int num2 = 345;
+
+_printf("%d\n", num2);
+
+_printf("%d\n", num1);
+
+.I Output:
+
+345
+
+12
+
+.SH NOTES
+- This project is based on printf function for Holberton School
+.SH SEE ALSO
+.B printf(3).
+.SH BUGS
+No know bugs.
+.SH AUTHORS
+Monica Jazmin Ortiz Alvarez, Aldo Nicolas Quinchia Osorio
+
+Students from Holberton School
