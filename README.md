@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 ```
 
 printf receives a variable number of parameters. The first parameter is fixed and is the format string. It includes text to be printed literally and marks to be replaced by text that is obtained from the additional parameters. Therefore printf is called with as many parameters as there aremarks in the format string plus one (the format string itself).
+You need to install holberton.h library to work with this function.
 
 The format converters accepted are:
 
@@ -20,14 +21,20 @@ The format converters accepted are:
 
 ## Usage
 ```python
-Example N° 1
+Example # 1
 
-_printf("Holberton%s,%s%d,%d\n", school,month,day,year);
+#include "holberton.h"
+
+int n;
+
+n = _printf("Holberton%s,%s%d,%d\n", school,month,day,year);
+_printf("The number of characters is: %d\n", n);
 ```
 
 ## Output
 ```bash
 Holbertonschool, March 18, 2020
+The number of characters is: 32
 ```
 compiled with the flags:
 
@@ -37,6 +44,8 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c
 
 ```python
 Example N° 2
+
+#include "holberton.h"
 
 int num1 = 12;
 int num2 = 345;
