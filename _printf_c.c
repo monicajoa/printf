@@ -10,6 +10,8 @@ int _printf(const char *format, ...)
 	format_func ar_fm[] = {
 		{"c", p_char},
 		{"s", p_str},
+		{"d", p_int},
+		{"i", p_int},
 		{'\0', '\0'}
 	};
 	va_list p_l;
