@@ -2,13 +2,22 @@
 .SH NAME
 .B _printf - Print data characters with formated type of variables
 .SH SYNOPSIS
-_printf
 .B #include "holberton.h"
+
+.B prototype - syntaxis
+
+int _printf(const char *format, ...)
+
+.B _printf
 .I FORMAT(String) [ARGUMENT]...
 .SH DESCRIPTION
 printf receives a variable number of parameters. The first parameter is fixed and is the format string. It includes text to be printed literally
 and marks to be replaced by text that is obtained from the additional parameters. Therefore printf is called with as many parameters as there are
 marks in the format string plus one (the format string itself).
+
+.B This functions is compiled with gcc flags
+
+gcc -Wall -Werror -Wextra -pedantic *.c
 .SH RETURN VALUE
 Returns an integer with the number of characters printed without the null byte at the end of the string.
 
@@ -38,11 +47,17 @@ Each conversion specification is introduced by the character %, and ends with a 
 
 .B #include "holberton.h"
 
-_printf("Holberton%s,%s%d,%d\n", school,month,day,year);
+int n;
+
+n = _printf("Holberton%s,%s%d,%d\\n", school,month,day,year);
+
+_printf("The number of characters is: %d\\n", n);
 
 .I Output:
 
 Holbertonschool, March 18, 2020
+
+The number of characters is: 32
 
 .I Example #2
 
@@ -52,9 +67,9 @@ int num1 = 12;
 
 int num2 = 345;
 
-_printf("%d\n", num2);
+_printf("%d\\n", num2);
 
-_printf("%d\n", num1);
+_printf("%d\\n", num1);
 
 .I Output:
 
