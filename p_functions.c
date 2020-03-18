@@ -16,7 +16,7 @@ int p_char(va_list arg)
  *
  * Return: int with the number if char printed
  */
-int p_percent(va_list arg)
+int p_percent(va_list arg __attribute__((__unused__)))
 {
 	_putchar('%');
 	return (1);
@@ -57,7 +57,7 @@ int p_str(va_list arg)
  */
 int p_int(va_list arg)
 {
-	int a, i, temp;
+	int a, i = 0, temp;
 	int factor = 1;
 
 	a = va_arg(arg, int);
