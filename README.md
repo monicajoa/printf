@@ -15,8 +15,11 @@ You need to install holberton.h library to work with this function.
 The format converters accepted are:
 
 %c Print the corresponding ASCII character
+
 %s Character string (ending in '\ 0')
-%d Signed decimal conversion of an integer 
+
+%d Signed decimal conversion of an integer
+
 %i Signed decimal conversion of an integer 
 
 ## Usage
