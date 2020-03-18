@@ -19,6 +19,6 @@ int _printf(const char *format, ...);
 int p_char(va_list);
 int p_str(va_list);
 int p_int(va_list);
-int p_percent(va_list arg);
+int p_percent(va_list);
 
 #endif /* HOLBERTON_H */
