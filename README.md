@@ -19,9 +19,11 @@ The format converters accepted are:
 %i Signed decimal conversion of an integer 
 
 ## Usage
+```python
 Example N° 1
 
 _printf("Holberton%s,%s%d,%d\n", school,month,day,year);
+```
 
 ## Output
 ```bash
@@ -38,15 +40,17 @@ Example N° 2
 
 int num1 = 12;
 int num2 = 345;
-printf("%d\n", num2);
-printf("%d\n", num1);
-
-it prints:
-345
+_printf("%d\n", num2);
+_printf("%d\n", num1);
+```
+## Output
+```bash
+i345
 12
 ```
 
 # Authors
 
 Mónica Ortíz Alvarez [GitHub](https://github.com/monicajoa)
+
 Nicolas Quinchia Osorio [GitHub](https://github.com/nicolasquinchia)
