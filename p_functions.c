@@ -10,7 +10,17 @@ int p_char(va_list arg)
 	_putchar(va_arg(arg, int));
 	return (1);
 }
-
+/**
+ *p_percent - function that print a % character
+ *@arg: list of parameters
+ *
+ * Return: int with the number if char printed
+ */
+int p_percent(va_list arg)
+{
+	_putchar('%');
+	return (1);
+}
 /**
  *p_str - function that print a string
  *@arg: list of parameters
@@ -51,6 +61,12 @@ int p_int(va_list arg)
 	int factor = 1;
 
 	a = va_arg(arg, int);
+	if (a < 0)
+	{
+		a = a * (-1);
+		_putchar('-');
+		i++;
+	}
 	temp = a;
 	i = 0;
 	while (temp)
@@ -61,7 +77,7 @@ int p_int(va_list arg)
 	while (factor > 1)
 	{
 		factor = factor / 10;
-		_putchar((a/factor) + '0');
+		_putchar((a / factor) + '0');
 		a = a % factor;
 		i++;
 	}
