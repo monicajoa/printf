@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
 			j = 0;
 			while (ar_fm[j].ft != '\0')
 			{
