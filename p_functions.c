@@ -61,25 +61,32 @@ int p_int(va_list arg)
 	int factor = 1;
 
 	a = va_arg(arg, int);
-	if (a < 0)
+	if (a <= INT_MAX && a >= INT_MIN)
 	{
-		a = a * (-1);
-		_putchar('-');
-		i++;
+		if (a < 0)
+		{
+			a = a * (-1);
+			_putchar('-');
+			i++;
+		}
+		temp = a;
+		i = 0;
+		while (temp)
+		{
+			temp = temp / 10;
+			factor = factor * 10;
+		}
+		while (factor > 1)
+		{
+			factor = factor / 10;
+			_putchar((a / factor) + '0');
+			a = a % factor;
+			i++;
+		}
+		return (i);
 	}
-	temp = a;
-	i = 0;
-	while (temp)
+	else
 	{
-		temp = temp / 10;
-		factor = factor * 10;
+		return (-1);
 	}
-	while (factor > 1)
-	{
-		factor = factor / 10;
-		_putchar((a / factor) + '0');
-		a = a % factor;
-		i++;
-	}
-	return (i);
 }

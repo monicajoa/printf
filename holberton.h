@@ -2,6 +2,7 @@
 #define HOLBERTON_H
 
 #include <stdarg.h>
+#include <limits.h>
 
 /**
  * struct format_func - Struct with format with its respective function
